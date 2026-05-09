@@ -1,16 +1,7 @@
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
-import { resolve } from 'path'
 
 export default defineConfig({
-  plugins: [vue()],
-  resolve: {
-    alias: {
-      '@': resolve(__dirname, 'src')
-    }
-  },
-  build: {
-    outDir: 'dist',
-    emptyOutDir: true
-  }
+  base: '/', // Vercel 必须用绝对路径
+  plugins: [vue()]
 })
